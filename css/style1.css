@@ -1,0 +1,78 @@
+body {
+  background-image: url(images/BG57.jpg);/*linear-gradient(360deg, #1C1C1C 10%, #494949 360%);  https://www.vecteezy.com/vector-art/600523-abstract-black-background-gradient-that-looks-modern*/
+  background-repeat: no-repeat;
+}
+p {
+  font-family: "Times New Roman", serif;
+  color: white;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #343232;
+  border: 1px solid #545454;
+}
+
+li a {
+  display: block;
+  color: #DDDDDD;
+  text-align: center;
+  padding: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+li {
+  float: left;
+  border: 1px solid #545454;
+}
+
+li a:hover {
+  background-color: #555;
+  color: white;
+}
+#login {
+    display: block;
+    line-height: 2;
+    padding: 5px 15px;
+    float: right;
+    top: 7px;
+    color: #fff;
+    background-color: #343232;
+    text-decoration: none;
+    font-family: "Times New Roman",Arial,sans-serif;
+}
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu menu menu menu menu menu'
+    'main main main main main main'
+    'footer footer footer footer footer footer';
+}
+
+nav {
+  grid-area: menu;
+}
+main {
+  grid-area: main;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-top: 1px solid grey;  
+}
+
+header {
+  grid-area: header;
+  border-bottom: 1px solid grey;
+}
+
+footer {
+  border-top: 1px solid grey;
+  grid-area: footer;
+  font-style: italic;
+  display: flex;
+  flex-direction: row;
+}

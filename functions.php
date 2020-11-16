@@ -2,7 +2,7 @@
 function getConnection() {
 	try {
 		$connection = new PDO("mysql:host=localhost;dbname=unn_w18030605",
-			"unn_w18030605", "");
+			"unn_w18030605", "oD6e6A6Po");
 		$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		return $connection;
 	} catch (Exception $e) {
@@ -136,14 +136,19 @@ function process_form($input){
 		echo "Error: $e";
 	}
 }
-function makeNavMenu($menuOptions) {
+function makeNavMenu($menuOptions, $active) {
 	$options = "<ul>\n";
+	$act = "";
 	foreach ($menuOptions as $key=>$value) {
-		$options .= "<li <a href='$key'>$value</a></li>\n";
+		if($active==$key){
+		$act = "class='active'";
+		}
+		$options .= "<li> <a $act href='$key'>$value</a></li>\n";
+		$act = "";
 	}
 	$options .= "</ul>\n";
 	$navMenuContent = <<<NAVMENU
-		<nav>
+		<nav class="menu">
 				$options
 		</nav>
 NAVMENU;

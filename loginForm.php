@@ -7,7 +7,7 @@
 <body>
 	<div class="overlay">
 <form method="post" action="loginProcess.php">
-   <div class="con">
+   <div class="container">
    <header class="head-form">
       <h1>Log In</h1>
       <p>Enter your details to login</p>
