@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style1.css">
 	<title>Choose a book to edit</title>
 </head>
 <body>
-	<nav>
-				<ul>
-		  			<li><a href="index.html">HOME</a></li>
-		  				<li><a href="chooseBook.php">EDIT BOOK</a></li>
-		  				<li><a href="orderBooksForm.php">ORDER BOOK</a></li>
-		  				<li><a href="credits.php">CREDITS</a></li>
-		  				<li><a href="loginForm.php">LOGIN</a></li>
-				</ul>
-			</nav>
+	<div class="grid-container">
+			<header>
+				<form method="post" action="loginProcess.php">
+				<input class='login' type="text" placeholder="Username" name="username" required>
+      			<br>
+      			<input class='login' type="password" placeholder="Password" name="password" required>
+      			<br>
+      			<button class='login' type="submit" value="Login">Login</button>
+				</form>
+			</header>
+			<?php $menuArray = array ("index.php" => "HOME", "chooseBook.php" => "EDIT BOOK", "orderBooksForm.php" => "ORDER BOOK", "credits.php" => "CREDITS", "loginForm.php" => "LOGIN");
+			require_once("functions.php");
+			echo makeNavMenu($menuArray, "index.php"); ?>
+			</div>
+			<main>
 	<h1>Choose book to edit:</h1>
 	<table class="booksTable">
 <thead>
@@ -51,5 +57,6 @@ echo "<p>Query failed: ".$e->getMessage()."</p>\n";
 ?>
 </tbody>
 </table>
+</main>
 </body>
 </html>

@@ -11,7 +11,13 @@
 	<body>
 		<div class="grid-container">
 			<header>
-				<a id='login' href='loginForm.php'>LOG IN</a>
+				<form method="post" action="loginProcess.php">
+				<input class='login' type="text" placeholder="Username" name="username" required>
+      			<br>
+      			<input class='login' type="password" placeholder="Password" name="password" required>
+      			<br>
+      			<button class='login' type="submit" value="Login">Login</button>
+				</form>
 			</header>
 			<?php $menuArray = array ("index.php" => "HOME", "chooseBook.php" => "EDIT BOOK", "orderBooksForm.php" => "ORDER BOOK", "credits.php" => "CREDITS", "loginForm.php" => "LOGIN");
 			require_once("functions.php");
