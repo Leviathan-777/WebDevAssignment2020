@@ -22,7 +22,6 @@
 			<?php $menuArray = array ("index.php" => "HOME", "chooseBook.php" => "EDIT BOOK", "orderBooksForm.php" => "ORDER BOOK", "credits.php" => "CREDITS", "loginForm.php" => "LOGIN");
 			require_once("functions.php");
 			echo makeNavMenu($menuArray, "credits.php"); ?>
-			</div>
 			<main>
 				<div>
 				<h1>Bookstore</h1>
@@ -35,6 +34,5 @@
 				<p>Mateusz Beclawski. Student ID: 18030605</p>
 			</footer>
 		</div>
-		
 	</body>
 </html>

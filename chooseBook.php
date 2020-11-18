@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="css/style1.css">
+	<meta charset="UTF-8">
+		<link rel="shortcut icon" href="#">
+		<meta name="description" content="Bookstore">
+		<meta name="author" content="Mateusz Beclawski">
+		<link rel="stylesheet" href="css/style1.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Choose a book to edit</title>
 </head>
 <body>
@@ -18,7 +23,6 @@
 			<?php $menuArray = array ("index.php" => "HOME", "chooseBook.php" => "EDIT BOOK", "orderBooksForm.php" => "ORDER BOOK", "credits.php" => "CREDITS", "loginForm.php" => "LOGIN");
 			require_once("functions.php");
 			echo makeNavMenu($menuArray, "chooseBook.php"); ?>
-			</div>
 			<main>
 	<h1>Choose book to edit:</h1>
 	<table class="booksTable">
@@ -58,5 +62,6 @@ echo "<p>Query failed: ".$e->getMessage()."</p>\n";
 </tbody>
 </table>
 </main>
+</div>
 </body>
 </html>

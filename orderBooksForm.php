@@ -22,7 +22,6 @@
 			<?php $menuArray = array ("index.php" => "HOME", "chooseBook.php" => "EDIT BOOK", "orderBooksForm.php" => "ORDER BOOK", "credits.php" => "CREDITS", "loginForm.php" => "LOGIN");
 			require_once("functions.php");
 			echo makeNavMenu($menuArray, "orderBooksForm.php"); ?>
-			</div>
 			<main>
 <h1>Order Books</h1>
 
@@ -95,5 +94,6 @@ catch (Exception $e) {
 </form>	
 <!-- Here you need to add Javascript or a link to a script (.js file) to process the form as required for the assignment -->
 </main>
+</div>
 </body>
 </html>
