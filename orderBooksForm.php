@@ -3,8 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Order Books</title>
+	<meta name="description" content="Bookstore">
+	<meta name="author" content="Mateusz Beclawski">
+	<link rel="stylesheet" href="css/style1.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<div class="grid-container">
+			<header>
+				<form class="loginBar" method="post" action="loginProcess.php">
+				<input class='login' type="text" placeholder="Username" name="username" required>
+      			<br>
+      			<input class='login' type="password" placeholder="Password" name="password" required>
+      			<br>
+      			<button class='login' type="submit" value="Login">Login</button>
+				</form>
+			</header>
+			<?php $menuArray = array ("index.php" => "HOME", "chooseBook.php" => "EDIT BOOK", "orderBooksForm.php" => "ORDER BOOK", "credits.php" => "CREDITS", "loginForm.php" => "LOGIN");
+			require_once("functions.php");
+			echo makeNavMenu($menuArray, "orderBooksForm.php"); ?>
+			</div>
+			<main>
 <h1>Order Books</h1>
 
 <form id="orderForm" action="javascript:alert('form submitted');" method="get">
@@ -75,5 +94,6 @@ catch (Exception $e) {
 	</section>
 </form>	
 <!-- Here you need to add Javascript or a link to a script (.js file) to process the form as required for the assignment -->
+</main>
 </body>
 </html>

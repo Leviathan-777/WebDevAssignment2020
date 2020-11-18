@@ -137,18 +137,18 @@ function process_form($input){
 	}
 }
 function makeNavMenu($menuOptions, $active) {
-	$options = "<ul>\n";
+	$options = "";
 	$act = "";
 	foreach ($menuOptions as $key=>$value) {
 		if($active==$key){
 		$act = "class='active'";
 		}
-		$options .= "<li> <a $act href='$key'>$value</a></li>\n";
+		$options .= "<a $act href='$key'>$value</a>\n";
 		$act = "";
 	}
-	$options .= "</ul>\n";
+	$options .= "<a href='javascript:void(0);' class='icon' onclick='mobileMenu()'>&#9776;</a>";
 	$navMenuContent = <<<NAVMENU
-		<nav class="menu">
+		<nav class="menu" id="menuM">
 				$options
 		</nav>
 NAVMENU;

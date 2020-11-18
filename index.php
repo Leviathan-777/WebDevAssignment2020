@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="#">
 		<meta name="description" content="Bookstore">
 		<meta name="author" content="Mateusz Beclawski">
 		<link rel="stylesheet" href="css/style1.css">
@@ -11,7 +12,7 @@
 	<body>
 		<div class="grid-container">
 			<header>
-				<form method="post" action="loginProcess.php">
+				<form  class="loginBar" method="post" action="loginProcess.php">
 				<input class='login' type="text" placeholder="Username" name="username" required>
       			<br>
       			<input class='login' type="password" placeholder="Password" name="password" required>
@@ -35,6 +36,6 @@
 				<p>Mateusz Beclawski. Student ID: 18030605</p>
 			</footer>
 		</div>
-		
+		<script type="text/javascript" src="functions.js"></script>
 	</body>
 </html>

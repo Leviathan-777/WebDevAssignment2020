@@ -7,7 +7,7 @@
 <body>
 	<div class="grid-container">
 			<header>
-				<form method="post" action="loginProcess.php">
+				<form class="loginBar" method="post" action="loginProcess.php">
 				<input class='login' type="text" placeholder="Username" name="username" required>
       			<br>
       			<input class='login' type="password" placeholder="Password" name="password" required>
@@ -17,7 +17,7 @@
 			</header>
 			<?php $menuArray = array ("index.php" => "HOME", "chooseBook.php" => "EDIT BOOK", "orderBooksForm.php" => "ORDER BOOK", "credits.php" => "CREDITS", "loginForm.php" => "LOGIN");
 			require_once("functions.php");
-			echo makeNavMenu($menuArray, "index.php"); ?>
+			echo makeNavMenu($menuArray, "chooseBook.php"); ?>
 			</div>
 			<main>
 	<h1>Choose book to edit:</h1>
