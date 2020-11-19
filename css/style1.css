@@ -52,11 +52,14 @@ h1 {
     font-size:13px;
     display: block;
   }
-  /*.menu.mobile {
+  .menu.mobile {
     position: relative;
-  }*/
+  }
+  .menu.mobile.sticky{
+    position: fixed;
+  }
   .menu.mobile a.icon {
-    /*position: absolute;*/
+    position: absolute;
     right: 0;
     top: 0;
   }
