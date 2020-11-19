@@ -1,10 +1,19 @@
 function mobileMenu() { // Function provides mobile navigation for smartphones
-var menu = document.getElementById("menuM");
-  if (menu.className === "menu") {
-    menu.className += " mobile";
-  } else {
-    menu.className = "menu";
+let menu = document.getElementById("menuM");
+  if (menu.className === "menu" || menu.className === "menu sticky") {
+    menu.classList.add("mobile")
+
+  }
+  else {
+    menu.classList.remove("mobile");
   }
 }
-//function stickyMenu() {}
- // Function sticks menu to top of the page
+window.onscroll = function() {
+let menu = document.getElementById("menuM");
+let sticky = menu.offsetTop;
+  if (window.pageYOffset > sticky) {
+    menu.classList.add("sticky");
+  } else {
+    menu.classList.remove("sticky");
+  }
+};

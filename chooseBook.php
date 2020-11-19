@@ -63,5 +63,6 @@ echo "<p>Query failed: ".$e->getMessage()."</p>\n";
 </table>
 </main>
 </div>
+<script type="text/javascript" src="functions.js"></script>
 </body>
 </html>

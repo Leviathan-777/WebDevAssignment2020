@@ -95,5 +95,6 @@ catch (Exception $e) {
 <!-- Here you need to add Javascript or a link to a script (.js file) to process the form as required for the assignment -->
 </main>
 </div>
+<script type="text/javascript" src="functions.js"></script>
 </body>
 </html>

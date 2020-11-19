@@ -52,13 +52,11 @@ h1 {
     font-size:13px;
     display: block;
   }
-}
-@media screen and (max-width: 600px) {
-  .menu.mobile {
+  /*.menu.mobile {
     position: relative;
-  }
+  }*/
   .menu.mobile a.icon {
-    position: absolute;
+    /*position: absolute;*/
     right: 0;
     top: 0;
   }
@@ -68,7 +66,11 @@ h1 {
     text-align: left;
   }
 }
-
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 .bookTitle a {
   font-family: "Times New Roman", serif;
   display: block;
@@ -78,7 +80,10 @@ h1 {
   font-weight: bold;
   text-decoration: none;
 }
-
+.bookTitle a:hover{
+  background-color: black;
+  color: white;
+}
 .menu a:hover {
   background-color: #555;
   color: white;

@@ -37,5 +37,6 @@
   </div>
 </form>
 </div>
+<script type="text/javascript" src="functions.js"></script>
 </body>
 </html>

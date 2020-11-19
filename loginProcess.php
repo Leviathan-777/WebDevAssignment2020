@@ -48,6 +48,6 @@ echo "<p>Username or password is incorrect</p>";
 	<title>Login</title>
 </head>
 <body>
-
+<script type="text/javascript" src="functions.js"></script>
 </body>
 </html>

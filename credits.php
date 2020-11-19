@@ -34,5 +34,6 @@
 				<p>Mateusz Beclawski. Student ID: 18030605</p>
 			</footer>
 		</div>
+		<script type="text/javascript" src="functions.js"></script>
 	</body>
 </html>
