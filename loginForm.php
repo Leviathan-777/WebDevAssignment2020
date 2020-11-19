@@ -18,24 +18,18 @@
          <?php $menuArray = array ("index.php" => "HOME", "chooseBook.php" => "EDIT BOOK", "orderBooksForm.php" => "ORDER BOOK", "credits.php" => "CREDITS", "loginForm.php" => "LOGIN");
          require_once("functions.php");
          echo makeNavMenu($menuArray, "loginForm.php"); ?>
-	<div class="overlay">
+         <main>
 <form method="post" action="loginProcess.php">
-   <div class="container">
-   <header class="head-form">
       <h1>Log In</h1>
       <p>Enter your details to login</p>
-   </header>
-   <br>
-   <div class="field-set">
-         <input class="form-input" id="txt-input" type="text" placeholder="Username" name="username" required>
       <br>
-      <input class="form-input" type="password" placeholder="Password" id="pwd"  name="password" required>
+      <input id="txt-input" type="text" placeholder="Username" name="username" required>
       <br>
-      <button class="log-in" type="submit" value="Login">Login</button>
-   </div>
-  </div>
-  </div>
+      <input type="password" placeholder="Password" id="pwd"  name="password" required>
+      <br>
+      <button type="submit" value="Login">Login</button>
 </form>
+</main>
 </div>
 <script type="text/javascript" src="functions.js"></script>
 </body>

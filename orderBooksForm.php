@@ -5,7 +5,7 @@
 	<title>Order Books</title>
 	<meta name="description" content="Bookstore">
 	<meta name="author" content="Mateusz Beclawski">
-	<link rel="stylesheet" href="css/style1.css">
+	<link rel="stylesheet" href="css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
