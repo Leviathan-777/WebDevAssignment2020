@@ -84,7 +84,7 @@ catch (Exception $e) {
 			Company Name <input type="text" name="companyName">
 		</div>
 		<p style="color: #FF0000; font-weight: bold;" id='termsText'>I have read and agree to the terms and conditions
-		<input type="checkbox" id="termsCheck" name="termsChkbx"></p>
+		<input type="checkbox" name="termsChkbx"></p>
 		<p><input type="submit" name="submit" id="subButton" value="Book now!" disabled></p>
 	</section>
 </form>	
@@ -95,9 +95,14 @@ catch (Exception $e) {
 </script>
 <script type="text/javascript">
 document.getElementsByName("total")[0].setAttribute("value", 0);
-let checkBox = document.getElementById("termsCheck");
+let checkBox = document.getElementsByName("termsChkbx")[0];
+let delivery = document.getElementsByName("deliveryType");
 let checkBooks = document.getElementsByName("book[]");
+calcTotal();
 checkBox.onclick = termsChange;
+for(let i=0; i<delivery.length; i++){
+	delivery[i].onclick = calcTotal;
+}
 for(let i=0; i<checkBooks.length; i++){
 	checkBooks[i].onclick = calcTotal;
 }

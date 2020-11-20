@@ -37,10 +37,17 @@ function calcTotal(){
     let total = 0;
     let books = new Array();
     books = document.getElementsByName("book[]");
+    let delivery = new Array();
+    delivery = document.getElementsByName("deliveryType");
+    for(let i=0; i<delivery.length; i++){
+      if(delivery[i].checked === true){
+      total += parseFloat(delivery[i].getAttribute("data-price"));
+    }
+    }
     for(let i=0; i<books.length; i++){
       if(books[i].checked === true){
       total += parseFloat(books[i].getAttribute("data-price"));
     }
     }
-    document.getElementsByName("total")[0].setAttribute("value", total);
+    document.getElementsByName("total")[0].setAttribute("value", total.toFixed(2));
 }
