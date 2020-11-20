@@ -88,14 +88,23 @@ catch (Exception $e) {
 			Company Name <input type="text" name="companyName">
 		</div>
 		<p style="color: #FF0000; font-weight: bold;" id='termsText'>I have read and agree to the terms and conditions
-		<input type="checkbox" name="termsChkbx"></p>
-		<p><input type="submit" name="submit" value="Book now!" disabled></p>
+		<input type="checkbox" id="termsCheck" name="termsChkbx"></p>
+		<p><input type="submit" name="submit" id="subButton" value="Book now!" disabled></p>
 	</section>
 </form>	
 <!-- Here you need to add Javascript or a link to a script (.js file) to process the form as required for the assignment -->
 </main>
 </div>
 <script type="text/javascript" src="functions.js">
+</script>
+<script type="text/javascript">
+document.getElementsByName("total")[0].setAttribute("value", 0);
+let checkBox = document.getElementById("termsCheck");
+let checkBooks = document.getElementsByName("book[]");
+checkBox.onclick = termsChange;
+for(let i=0; i<checkBooks.length; i++){
+	checkBooks[i].onclick = calcTotal;
+}
 </script>
 </body>
 </html>
