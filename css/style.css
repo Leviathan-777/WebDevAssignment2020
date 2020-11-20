@@ -98,6 +98,16 @@ h1 {
     text-decoration: none;
     font-family: "Times New Roman",Arial,sans-serif;
 }
+.logout{
+  display: flex;
+    float: right;
+    margin: 5px;
+    padding: 5px;
+    color: #ffff;
+    background-color: #343232;
+    text-decoration: none;
+    font-family: "Times New Roman",Arial,sans-serif;
+}
 .grid-container {
   display: grid;
   grid-template-areas:

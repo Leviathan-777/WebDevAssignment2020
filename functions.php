@@ -9,6 +9,33 @@ function getConnection() {
 		throw new Exception("Connection error ". $e->getMessage(), 0, $e);
 	}
 }
+function restrictedSession(){
+	ini_set("session.save_path", "/home/unn_w18030605/sessionData");
+session_start();
+if($_SESSION['logged-in']==false){
+	header("Location: restricted.php");
+	exit();
+}
+}
+function makeHeader(){
+	if (isset($_SESSION['logged-in']) && $_SESSION['logged-in']==true){
+		$headerContent = "<header><a class='logout' href='logoutProcess.php' class='logout'>Logout</a></header>";
+	}
+	else{
+	$headerContent = <<<HEADER
+		<header>
+				<form  class="loginBar" method="post" action="loginProcess.php">
+				<input class='login' type="text" placeholder="Username" name="username" required>
+      			<br>
+      			<input class='login' type="password" placeholder="Password" name="password" required>
+      			<br>
+      			<button class='login' type="submit" value="Login">Login</button>
+				</form>
+			</header>
+HEADER;
+}
+return $headerContent;
+}
 function checkCategories(){
 	$dbConn = getConnection();
 	$sqlQueryCat = "SELECT catID
@@ -155,5 +182,13 @@ NAVMENU;
 	$navMenuContent .= "\n";
 	return $navMenuContent;
 }
-
+function checkLoginPage(){
+	if (isset($_SESSION['logged-in']) && $_SESSION['logged-in']==true){
+				$loginPage = "ACCOUNT";
+			}
+			else{
+				$loginPage = "LOGIN";
+			}
+			return $loginPage;
+}
 ?>

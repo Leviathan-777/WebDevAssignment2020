@@ -1,3 +1,7 @@
+<?php
+require_once("functions.php");
+restrictedSession();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,17 +16,9 @@
 <body>
 	<body>
 	<div class="grid-container">
-			<header>
-				<form class="loginBar" method="post" action="loginProcess.php">
-				<input class='login' type="text" placeholder="Username" name="username" required>
-      			<br>
-      			<input class='login' type="password" placeholder="Password" name="password" required>
-      			<br>
-      			<button class='login' type="submit" value="Login">Login</button>
-				</form>
-			</header>
 			<?php $menuArray = array ("index.php" => "HOME", "chooseBook.php" => "EDIT BOOK", "orderBooksForm.php" => "ORDER BOOK", "credits.php" => "CREDITS", "loginForm.php" => "LOGIN");
 			require_once("functions.php");
+			echo makeHeader();  
 			echo makeNavMenu($menuArray, "chooseBook.php"); ?>
 			<main>
 <h1>Edit details of book:</h1>

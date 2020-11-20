@@ -1,3 +1,7 @@
+<?php
+ini_set("session.save_path", "/home/unn_w18030605/sessionData");
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,26 +10,18 @@
 </head>
 <body>
    <div class="grid-container">
-         <header>
-            <form  class="loginBar" method="post" action="loginProcess.php">
-            <input class='login' type="text" placeholder="Username" name="username" required>
-               <br>
-               <input class='login' type="password" placeholder="Password" name="password" required>
-               <br>
-               <button class='login' type="submit" value="Login">Login</button>
-            </form>
-         </header>
          <?php $menuArray = array ("index.php" => "HOME", "chooseBook.php" => "EDIT BOOK", "orderBooksForm.php" => "ORDER BOOK", "credits.php" => "CREDITS", "loginForm.php" => "LOGIN");
          require_once("functions.php");
+         echo makeHeader();  
          echo makeNavMenu($menuArray, "loginForm.php"); ?>
          <main>
 <form method="post" action="loginProcess.php">
       <h1>Log In</h1>
       <p>Enter your details to login</p>
       <br>
-      <input id="txt-input" type="text" placeholder="Username" name="username" required>
+      <input type="text" placeholder="Username" name="username" required>
       <br>
-      <input type="password" placeholder="Password" id="pwd"  name="password" required>
+      <input type="password" placeholder="Password"  name="password" required>
       <br>
       <button type="submit" value="Login">Login</button>
 </form>

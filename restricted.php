@@ -1,13 +1,6 @@
 <?php
 ini_set("session.save_path", "/home/unn_w18030605/sessionData");
 session_start();
-if (isset($_SESSION ['logged-in']) && $_SESSION ['logged-in']) {
-	echo "<p>Welcome! This page could now display information / provide functionality that you want to restrict access to.</p>\n";
-}
-else{
-	echo "<p>You need to login to access this page.</p>
-	<a href='http://unn-w18030605.newnumyspace.co.uk/loginForm.php'>Login</a>";
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,18 +15,15 @@ else{
 </head>
 <body>
 <div class="grid-container">
-			<header>
-				<form class="loginBar" method="post" action="loginProcess.php">
-				<input class='login' type="text" placeholder="Username" name="username" required>
-      			<br>
-      			<input class='login' type="password" placeholder="Password" name="password" required>
-      			<br>
-      			<button class='login' type="submit" value="Login">Login</button>
-				</form>
-			</header>
-			<?php $menuArray = array ("index.php" => "HOME", "chooseBook.php" => "EDIT BOOK", "orderBooksForm.php" => "ORDER BOOK", "credits.php" => "CREDITS", "loginForm.php" => "LOGIN");
+			<?php 
+
+			$menuArray = array ("index.php" => "HOME", "chooseBook.php" => "EDIT BOOK", "orderBooksForm.php" => "ORDER BOOK", "credits.php" => "CREDITS", "loginForm.php" => "LOGIN");
 			require_once("functions.php");
-			echo makeNavMenu($menuArray, "chooseBook.php"); ?>
+			echo makeHeader();  
+			echo makeNavMenu($menuArray, ""); ?>
+		<main>
+			<h1>You need to login to access this page.</h1>;
+		</main>
 		</div>
 </body>
 </html>
