@@ -12,7 +12,8 @@ session_start();
 session_unset();
 session_destroy();
 echo "Successful Log out";
-header("location: index.php");
+header('Location: ' . $_SERVER['HTTP_REFERER']);
+exit();
 ?>
 </body>
 </html>

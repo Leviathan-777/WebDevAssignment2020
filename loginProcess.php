@@ -29,7 +29,7 @@ if ($user) {
 	if(password_verify( $password , $passwordHash)){
 		echo "<p>Logon was successful</p>";
 		$_SESSION['logged-in']=true;
-		header("Location: index.php");
+		header('Location: ' . $_SERVER['HTTP_REFERER']);
 		exit();
 	}
 	else {
