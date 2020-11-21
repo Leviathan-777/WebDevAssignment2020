@@ -88,24 +88,11 @@ catch (Exception $e) {
 		<p><input type="submit" name="submit" id="subButton" value="Book now!" disabled></p>
 	</section>
 </form>	
-<!-- Here you need to add Javascript or a link to a script (.js file) to process the form as required for the assignment -->
 </main>
 </div>
 <script type="text/javascript" src="functions.js">
 </script>
-<script type="text/javascript">
-document.getElementsByName("total")[0].setAttribute("value", 0);
-let checkBox = document.getElementsByName("termsChkbx")[0];
-let delivery = document.getElementsByName("deliveryType");
-let checkBooks = document.getElementsByName("book[]");
-calcTotal();
-checkBox.onclick = termsChange;
-for(let i=0; i<delivery.length; i++){
-	delivery[i].onclick = calcTotal;
-}
-for(let i=0; i<checkBooks.length; i++){
-	checkBooks[i].onclick = calcTotal;
-}
+<script type="text/javascript" src="functionsOrderBooks.js">
 </script>
 </body>
 </html>
