@@ -17,8 +17,8 @@ session_start();
 		<div class="grid-container">
 			<?php
 			require_once("functions.php");
-			$loginPage = checkLoginPage();
-			$menuArray = array ("index.php" => "HOME", "chooseBook.php" => "EDIT BOOK", "orderBooksForm.php" => "ORDER BOOK", "credits.php" => "CREDITS", "loginForm.php" => $loginPage);
+			$loginMenu = checkLoginPage();
+			$menuArray = array ("index.php" => "HOME", "chooseBook.php" => "EDIT BOOK", "orderBooksForm.php" => "ORDER BOOK", "credits.php" => "CREDITS", $loginMenu['loginPage'] => $loginMenu['name']);
 			echo makeHeader();  
 			echo makeNavMenu($menuArray, "index.php"); ?>
 			<main>

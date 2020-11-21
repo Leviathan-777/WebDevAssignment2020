@@ -15,12 +15,15 @@ restrictedSession();
 </head>
 <body>
 	<div class="grid-container">
-			<?php $menuArray = array ("index.php" => "HOME", "chooseBook.php" => "EDIT BOOK", "orderBooksForm.php" => "ORDER BOOK", "credits.php" => "CREDITS", "loginForm.php" => "LOGIN");
+
+			<?php
 			require_once("functions.php");
+			$loginMenu = checkLoginPage();
+			$menuArray = array ("index.php" => "HOME", "chooseBook.php" => "EDIT BOOK", "orderBooksForm.php" => "ORDER BOOK", "credits.php" => "CREDITS", $loginMenu['loginPage'] => $loginMenu['name']);
 			echo makeHeader();  
 			echo makeNavMenu($menuArray, "chooseBook.php"); ?>
 			<main>
-	<h1>Choose book to edit:</h1>
+	<h1>Choose book to edit</h1>
 	<table class="booksTable">
 <thead>
 <tr>

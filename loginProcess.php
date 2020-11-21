@@ -13,7 +13,7 @@ require_once("functions.php");
 		$dbConn = getConnection();
 
 /* Query the users database table to get the password hash for the username entered by the user */
-		$querySQL = "SELECT passwordHash FROM NBL_users
+		$querySQL = "SELECT passwordHash, userID FROM NBL_users
 WHERE username = :username";
 
 // Prepare the sql statement
@@ -29,6 +29,7 @@ if ($user) {
 	if(password_verify( $password , $passwordHash)){
 		echo "<p>Logon was successful</p>";
 		$_SESSION['logged-in']=true;
+		$_SESSION['userID']=$user->userID;
 		header('Location: ' . $_SERVER['HTTP_REFERER']);
 		exit();
 	}

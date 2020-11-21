@@ -184,11 +184,16 @@ NAVMENU;
 }
 function checkLoginPage(){
 	if (isset($_SESSION['logged-in']) && $_SESSION['logged-in']==true){
-				$loginPage = "ACCOUNT";
+				$loginPage = "accountDetails.php";
+				$name = "ACCOUNT";
 			}
 			else{
-				$loginPage = "LOGIN";
+				$loginPage = "loginForm.php";
+				$name = "LOGIN";
 			}
-			return $loginPage;
+			$loginMenu = array();
+			$loginMenu['loginPage'] = $loginPage;
+			$loginMenu['name'] = $name;
+			return $loginMenu;
 }
 ?>
