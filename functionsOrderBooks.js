@@ -62,4 +62,5 @@ function checkForm(){
   let surname = document.getElementsByName("surname")[0];
   let forename = document.getElementsByName("forename")[0];
     alert("test");
+}
 });
