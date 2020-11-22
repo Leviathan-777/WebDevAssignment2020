@@ -7,14 +7,14 @@ window.addEventListener('load', function() {
   let checkboxes = document.getElementsByName("book[]");
   let termsChkbx = document.getElementsByName("termsChkbx")[0];
   for (var i = 0; i < checkboxes.length; i++) {
-    checkboxes[i].onclick = calcTotal;
+    checkboxes[i].addEventListener("click", calcTotal);
   }
   for(let i=0; i<deliveries.length; i++){
-    deliveries[i].onclick = calcTotal;
+    deliveries[i].addEventListener("click", calcTotal);
   }
   subButton.addEventListener("click", checkForm);
-  customer.onclick = customerType;
-  termsChkbx.onclick = termsChange;
+  customer.addEventListener("click", customerType);
+  termsChkbx.addEventListener("click", termsChange);
   function checkForm(_evt){
     let failed = false;
     let orderForm = document.getElementById("orderForm");
