@@ -9,11 +9,11 @@ session_start();
 </head>
 <body>
 	<?php
-session_unset();
-session_destroy();
-echo "Successful Log out";
-header('Location: ' . $_SERVER['HTTP_REFERER']);
-exit();
-?>
+	session_unset();
+	session_destroy();
+	echo "Successful Log out";
+	header('Location: ' . $_SERVER['HTTP_REFERER']);
+	exit();
+	?>
 </body>
 </html>
