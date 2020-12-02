@@ -22,11 +22,9 @@ session_start();
 		echo makeNavMenu($menuArray, "credits.php"); ?>
 		<main>
 			<div>
-				<h1>Bookstore</h1>
-				<p>Main Page</p>
+				<h1>Credits</h1>
+				<p>References</p>
 			</div>
-			<aside id='offers'></aside>
-			<aside id='JSONoffers'></aside>
 		</main>
 		<footer>
 			<p>Mateusz Beclawski. Student ID: 18030605</p>

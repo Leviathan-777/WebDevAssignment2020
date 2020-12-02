@@ -41,13 +41,11 @@ window.addEventListener('load', function() {
     let text = document.getElementById("termsText");
     let button = document.getElementById("subButton");
     if(termsChkbx.checked === true){
-      text.style.color = "black";
-      text.style.fontWeight = "normal";
+      text.setAttribute("style", "color: black; font-weight: normal;");
       button.disabled = false;
     }
     else{
-      text.style.color = "#FF0000";
-      text.style.fontWeight = "bold";
+      text.setAttribute("style", "color: #FF0000; font-weight: bold;");
       button.disabled = true;
     }
   }
