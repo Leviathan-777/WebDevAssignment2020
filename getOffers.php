@@ -39,6 +39,8 @@ function getHTMLOffer($dbConn) {
 }
 
 function getJSONOffer($dbConn) {
+    header("Content-Type: application/json; charset=UTF-8"); 
+
 	try {
 	    $sql = "select bookTitle, catDesc, bookPrice from NBL_special_offers inner join NBL_category on NBL_special_offers.catID = NBL_category.catID order by rand() limit 1";
 	   	$rsOffer = $dbConn->query($sql);;
