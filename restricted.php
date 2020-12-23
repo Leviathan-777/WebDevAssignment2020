@@ -24,6 +24,9 @@ session_start();
 		<main>
 			<h1>You need to login to access this page.</h1>;
 		</main>
+		<footer>
+			<p>Mateusz Beclawski. Student ID: 18030605</p>
+		</footer>
 	</div>
 </body>
 <script type="text/javascript" src="functions.js"></script>

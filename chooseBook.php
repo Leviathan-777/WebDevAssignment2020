@@ -24,7 +24,7 @@ restrictedSession();
 		echo makeNavMenu($menuArray, "chooseBook.php"); ?>
 		<main>
 			<h1>Choose book to edit</h1>
-			<table class="booksTable">
+			<div><table class="booksTable">
 				<thead>
 					<tr>
 						<th>Title</th>
@@ -59,8 +59,11 @@ restrictedSession();
 					}
 					?>
 				</tbody>
-			</table>
+			</table></div>
 		</main>
+		<footer>
+			<p>Mateusz Beclawski. Student ID: 18030605</p>
+		</footer>
 	</div>
 	<script type="text/javascript" src="functions.js"></script>
 </body>

@@ -144,6 +144,7 @@ main {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  min-height: 86vh;
 }
 
 header {

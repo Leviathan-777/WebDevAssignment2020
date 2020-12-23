@@ -33,6 +33,9 @@ session_start();
             <button class="login" type="submit" value="Login">Login</button>
          </form>
       </main>
+      <footer>
+         <p>Mateusz Beclawski. Student ID: 18030605</p>
+      </footer>
    </div>
    <script type="text/javascript" src="functions.js"></script>
 </body>
