@@ -119,23 +119,25 @@ function validate_form() {
 	return array ($input, $errors);
 }
 function show_errors($input, $errors){
-	$output = "Errors: ";
+	echo "<h1>Errors</h1>";
+	$output = "";
 	foreach ($errors as $error) {
 		$output .= "<p>$error</p>\n";
 	}
-	echo "$output";
+	echo "<div id='account'>$output";
+	$bookISBN = $input['bookISBN'];
 	if(array_key_exists('bookTitle', $errors))
-		{$bookTitle = $input['bookTitle'];}
-	else{
 		$bookTitle = null;
+	else{
+		$bookTitle = $input['bookTitle'];
 	}
 	if(array_key_exists('bookPrice', $errors))
-		{$bookPrice = $input['bookPrice'];}
-	else{
 		$bookPrice = null;
+	else{
+		$bookPrice = $input['bookPrice'];
 	}
-	$formlink = "http://unn-w18030605.newnumyspace.co.uk/editBook.php?bookTitle=$bookTitle&bookPrice=$bookPrice";
-	echo "<a href='$formlink'>Fill the form correctly</a>";
+	$formlink = "http://unn-w18030605.newnumyspace.co.uk/editBook.php?bookISBN=$bookISBN";
+	echo "<a href='$formlink'>Fill the form correctly</a></div>";
 }
 function process_form($input){
 	$bookTitle = $input['bookTitle'];
@@ -153,11 +155,12 @@ function process_form($input){
 		$stmt->execute(array(':bookISBN' => $bookISBN, ':bookTitle' => $bookTitle, ':bookYear' => $bookYear, ':pubID' => $pubID, ':catID' => $catID, ':bookPrice' => $bookPrice,));
 
 		echo "<h1>Book has been updated</h1>\n";
+		echo "<<div id='account'>\n";
 		echo "<p>Title: $bookTitle</p>\n";
 		echo "<p>Category: $catID</p>\n";
 		echo "<p>Publisher: $pubID</p>\n";
 		echo "<p>Price: $bookPrice</p>\n";
-		echo "<p>Year: $bookYear</p>\n";
+		echo "<p>Year: $bookYear</p></div>\n";
 	}
 	catch (Exception $e) {
 		echo "Error: $e";

@@ -22,8 +22,7 @@ session_start();
 		echo makeNavMenu($menuArray, "credits.php"); ?>
 		<main>
 			<div>
-				<h1>Credits</h1>
-				<p>References</p>
+				<h1>Credits and References</h1>
 			</div>
 		</main>
 		<footer>

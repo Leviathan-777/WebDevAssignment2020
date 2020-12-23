@@ -23,8 +23,7 @@ session_start();
 		echo makeNavMenu($menuArray, "index.php"); ?>
 		<main>
 			<div>
-				<h1>Bookstore</h1>
-				<p>Offers</p>
+				<h1>Bookstore Offers</h1>
 				
 			</div>
 			<aside id='offers'></aside>

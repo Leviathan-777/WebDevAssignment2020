@@ -171,7 +171,7 @@ table.booksTable {
   border-collapse: collapse;
 }
 table.booksTable td, table.booksTable th {
-  border: 1px solid #4A4A4A;
+  border: 1px solid black;
   padding: 3px 2px;
 }
 table.booksTable tbody td {
@@ -239,32 +239,10 @@ table.booksTable tfoot td {
   color: black;
   font-size: 20px;
 }
-#account h1{
+#loginForm h1, #account h1, #loginForm p{
   color: black;
 }
-#loginForm p{
-  color: black;
-}
-#loginForm h1{
-  color: black;
-}
-#offers{
-width: 450px;
-  text-align: center;
-  height: auto;
-  border-radius: 10px;
-  margin: 2% auto;
-  box-shadow: 0 10px 50px hsla(20, 67%, 75%, 0.31);
-  padding: 2%;
-  background-image: linear-gradient(#949494, #a6a6a6,#efefef);
-}
-#offers p{
-  color: black;
-}
-#JSONoffers p{
-  color: black;
-}
-#JSONoffers{
+#offers, #JSONoffers{
   width: 450px;
   text-align: center;
   height: auto;
@@ -273,4 +251,7 @@ width: 450px;
   box-shadow: 0 10px 50px hsla(20, 67%, 75%, 0.31);
   padding: 2%;
   background-image: linear-gradient(#949494, #a6a6a6,#efefef);
+}
+#offers p, #JSONoffers p{
+  color: black;
 }

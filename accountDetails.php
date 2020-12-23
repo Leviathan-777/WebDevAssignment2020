@@ -20,7 +20,7 @@ restrictedSession();
 		$loginMenu = checkLoginPage();
 		$menuArray = array ("index.php" => "HOME", "chooseBook.php" => "EDIT BOOK", "orderBooksForm.php" => "ORDER BOOK", "credits.php" => "CREDITS", $loginMenu['loginPage'] => $loginMenu['name']);
 		echo makeHeader();  
-		echo makeNavMenu($menuArray, "acoountDetails.php"); ?>
+		echo makeNavMenu($menuArray, "accountDetails.php"); ?>
 		<main>
 			
 			<?php
@@ -34,7 +34,7 @@ restrictedSession();
 				$userID =  $_SESSION['userID'];
 				$stmt->execute(array(':userID' => $userID));
 				$user = $stmt->fetchObject();
-				echo "<div id='account'><h1>Your Account Details</h1><p>Firstname: $user->firstname</p>";
+				echo "<h1>Your Account Details</h1><div id='account'><p>Firstname: $user->firstname</p>";
 				echo "<p>Surname: $user->surname</p></div>";
 			}
 			catch (Exception $e) {

@@ -26,7 +26,7 @@ session_start();
 			require_once("functions.php");
 			list($input, $errors) = validate_form();
 			if ($errors!=null) {
-				print_r($errors);
+				//print_r($errors);
 				echo show_errors($input, $errors);
 			} 
 			else {
