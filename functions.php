@@ -1,5 +1,5 @@
 <?php
-function getConnection() {
+function getConnection() { // Establish connection with database
 	try {
 		$connection = new PDO("mysql:host=localhost;dbname=unn_w18030605",
 			"unn_w18030605", "oD6e6A6Po");
@@ -9,7 +9,7 @@ function getConnection() {
 		throw new Exception("Connection error ". $e->getMessage(), 0, $e);
 	}
 }
-function restrictedSession(){
+function restrictedSession(){ //Create restricted session
 	ini_set("session.save_path", "/home/unn_w18030605/sessionData");
 session_start();
 if($_SESSION['logged-in']==false){
@@ -17,7 +17,7 @@ if($_SESSION['logged-in']==false){
 	exit();
 }
 }
-function makeHeader(){
+function makeHeader(){ // Make HTML header
 	if (isset($_SESSION['logged-in']) && $_SESSION['logged-in']==true){
 		$headerContent = "<header><a class='logout' href='logoutProcess.php' class='logout'>Logout</a></header>";
 	}
@@ -36,7 +36,7 @@ HEADER;
 }
 return $headerContent;
 }
-function checkCategories(){
+function checkCategories(){ // Retrive categories ID from database
 	$dbConn = getConnection();
 	$sqlQueryCat = "SELECT catID
 	FROM NBL_category";
@@ -47,7 +47,7 @@ function checkCategories(){
 	}
 	return $categories;
 }
-function checkPublishers(){
+function checkPublishers(){ // Retrive publishers ID from database
 	$dbConn = getConnection();
 	$sqlQueryPub = "SELECT pubID
 	FROM NBL_publisher";
@@ -58,7 +58,7 @@ function checkPublishers(){
 	}
 	return $publishers;
 }
-function validate_form() {
+function validate_form() { // Edit book form validation
 	$publishers = checkPublishers();
 	$categories = checkCategories();
 	$input = array();
@@ -66,42 +66,48 @@ function validate_form() {
 	/*$errors['bookTitle'] = null;
 	$errors['bookPrice']= null;
 	$errors['bookYear'] = null;*/
-
+	//Validate and santize input
 	$input['bookTitle'] = filter_has_var(INPUT_GET, 'bookTitle') 
 	? $_GET['bookTitle']: null;
 	$input['bookTitle'] = trim($input['bookTitle']);
+	$input['bookTitle'] = filter_var($input['bookTitle'], FILTER_SANITIZE_STRING);
 
 	$input['pubID'] = filter_has_var(INPUT_GET, 'pubID') 
 	? $_GET['pubID']: null;
 	$input['pubID'] = trim($input['pubID']);
+	$input['pubID'] = filter_var($input['pubID'], FILTER_SANITIZE_STRING);
 
 	$input['catID'] = filter_has_var(INPUT_GET, 'catID') 
 	? $_GET['catID']: null;
 	$input['catID'] = trim($input['catID']);
+	$input['catID'] = filter_var($input['catID'], FILTER_SANITIZE_STRING);
 
 	$input['bookPrice'] = filter_has_var(INPUT_GET, 'bookPrice') 
 	? $_GET['bookPrice']: null;
 	$input['bookPrice'] = trim($input['bookPrice']);
+	$input['bookPrice'] = filter_var($input['bookPrice'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 
 	$input['bookYear'] = filter_has_var(INPUT_GET, 'bookYear') 
 	? $_GET['bookYear']: null;
 	$input['bookYear'] = trim($input['bookYear']);
+	$input['bookYear'] = filter_var($input['bookYear'], FILTER_SANITIZE_NUMBER_INT);
 
 	$input['bookISBN'] = filter_has_var(INPUT_GET, 'bookISBN') 
 	? $_GET['bookISBN']: null;
 	$input['bookISBN'] = trim($input['bookISBN']);
+	$input['bookISBN'] = filter_var($input['bookISBN'], FILTER_SANITIZE_NUMBER_INT);
 
 	if (empty($input['bookTitle'])) {
-		$errors[] = "Book title is empty";
+		$errors[] = "Book title is incorrect";
 	}
 	if (empty($input['bookPrice'])) {
-		$errors[] = "Price field is empty";
+		$errors[] = "Price field is incorrect";
 	}
 	elseif (!filter_var($input['bookPrice'], FILTER_VALIDATE_FLOAT)){
 		$errors['bookPrice'] = "Enter valid price";
 	}
 	if (empty($input['bookYear'])) {
-		$errors[] = "Year field is empty";
+		$errors[] = "Year field is incorrect";
 	}
 	elseif ($input['bookYear']<0 or  !filter_var($input['bookYear'], FILTER_VALIDATE_INT)) {
 		$errors['bookYear'] = "Enter valid year";
@@ -118,7 +124,7 @@ function validate_form() {
 	}
 	return array ($input, $errors);
 }
-function show_errors($input, $errors){
+function show_errors($input, $errors){ //Shows errors
 	echo "<h1>Errors</h1>";
 	$output = "";
 	foreach ($errors as $error) {
@@ -139,7 +145,7 @@ function show_errors($input, $errors){
 	$formlink = "http://unn-w18030605.newnumyspace.co.uk/editBook.php?bookISBN=$bookISBN";
 	echo "<a href='$formlink'>Fill the form correctly</a></div>";
 }
-function process_form($input){
+function process_form($input){ //Process santized and validated input, send it to database, inform user about sucessful operation
 	$bookTitle = $input['bookTitle'];
 	$bookPrice = $input['bookPrice'];
 	$catID = $input['catID'];
@@ -166,7 +172,7 @@ function process_form($input){
 		echo "Error: $e";
 	}
 }
-function makeNavMenu($menuOptions, $active) {
+function makeNavMenu($menuOptions, $active) { //Creates HTML menu
 	$options = "";
 	$act = "";
 	foreach ($menuOptions as $key=>$value) {
@@ -185,7 +191,7 @@ NAVMENU;
 	$navMenuContent .= "\n";
 	return $navMenuContent;
 }
-function checkLoginPage(){
+function checkLoginPage(){ // Check if user logged, if yes show account page instead of login page
 	if (isset($_SESSION['logged-in']) && $_SESSION['logged-in']==true){
 				$loginPage = "accountDetails.php";
 				$name = "ACCOUNT";

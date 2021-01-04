@@ -1,5 +1,5 @@
 'use strict';
-function mobileMenu() {
+function mobileMenu() { //Function provides different menu for smartphones and smaller screens
   let menu = document.getElementById("menuM");
   if (menu.className === "menu" || menu.className === "menu sticky") {
     menu.classList.add("mobile")
@@ -10,7 +10,7 @@ function mobileMenu() {
   }
 }
 window.onscroll = stickyMenu;
-function stickyMenu(){
+function stickyMenu(){ //Function sticks menu on top when scrolled down
   let menu = document.getElementById("menuM");
   let sticky = menu.offsetTop;
   if (window.pageYOffset > sticky) {

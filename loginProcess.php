@@ -1,14 +1,21 @@
 <?php
 ini_set("session.save_path", "/home/unn_w18030605/sessionData");
 session_start();
-//Do validation
+//Validation
 $username = filter_has_var(INPUT_POST, 'username') 
 ? $_POST['username']: null;
 $password = filter_has_var(INPUT_POST, 'password') 
 ? $_POST['password']: null;
-
+$username = trim($username);
+$password = trim($password);
+$username = filter_var($username, FILTER_SANITIZE_SPECIAL_CHARS, FILTER_FLAG_STRIP_LOW);
+$password = filter_var($password, FILTER_SANITIZE_SPECIAL_CHARS, FILTER_FLAG_STRIP_LOW);
+if(empty($password) || empty($username)){
+	echo "<p>Username or password is incorrect</p>";
+	exit();
+} 
 try {
-// Make a database connection
+// Establishes a database connection
 	require_once("functions.php");
 	$dbConn = getConnection();
 
@@ -16,13 +23,13 @@ try {
 	$querySQL = "SELECT passwordHash, userID FROM NBL_users
 	WHERE username = :username";
 
-// Prepare the sql statement
+// Prepares the sql statement
 	$stmt = $dbConn->prepare($querySQL);
 
-// Execute the query
+// Executes the query
 	$stmt->execute(array(':username' => $username));
 
-	/* Check if a record was returned by the query*/
+	/* Checks if a record was returned by the query*/
 	$user = $stmt->fetchObject();
 	if ($user) {
 		$passwordHash = $user->passwordHash;
@@ -30,6 +37,14 @@ try {
 			echo "<p>Logon was successful</p>";
 			$_SESSION['logged-in']=true;
 			$_SESSION['userID']=$user->userID;
+			if($_SERVER['HTTP_REFERER'] === 'http://unn-w18030605.newnumyspace.co.uk/restricted.php'){
+				header('Location: chooseBook.php');
+				exit();
+			}
+			if($_SERVER['HTTP_REFERER'] == 'http://unn-w18030605.newnumyspace.co.uk/loginForm.php'){
+				header('Location: accountDetails.php');
+				exit();
+			}
 			header('Location: ' . $_SERVER['HTTP_REFERER']);
 			exit();
 		}

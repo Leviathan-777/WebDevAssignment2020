@@ -23,6 +23,16 @@ session_start();
 		<main>
 			<div>
 				<h1>Credits and References</h1>
+				<div id='account'>
+					<h2>Credits:</h2>
+					<p>Author: Matuesz Beclawski</p>
+					<p>Student ID: 18030605</p>
+					<h2>References:</h2>
+					<p>W3schools.com. 2021. HTML Tutorial. [online] Available at: <a href="https://www.w3schools.com/html/default.asp">Link</a> [Accessed 3 January 2021].<p>
+					<p>W3schools.com. 2021. CSS Tutorial. [online] Available at: <a href="https://www.w3schools.com/css/default.asp">Link</a> [Accessed 3 January 2021].<p>
+					<p>W3schools.com. 2021. JavaScript Tutorial. [online] Available at: <a href="https://www.w3schools.com/js/default.asp">Link</a> [Accessed 3 January 2021].<p>
+					<p>W3schools.com. 2021. PHP Tutorial. [online] Available at: <a href="https://www.w3schools.com/php/default.asp">Link</a> [Accessed 3 January 2021].<p>
+				</div>
 			</div>
 		</main>
 		<footer>

@@ -24,6 +24,7 @@ restrictedSession();
 		<main>
 			
 			<?php
+			//Retrive account details
 			try {
 				require_once("functions.php");
 				$dbConn = getConnection();

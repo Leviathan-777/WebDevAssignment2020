@@ -1,6 +1,6 @@
 window.addEventListener('load', function () {
  	"use strict";
-	const getOffers = function(){
+	const getOffers = function(){ //Function retrives offers and puts them into aside block
 	fetch("getOffers.php")
 	.then(
 		function(response){
@@ -12,13 +12,13 @@ window.addEventListener('load', function () {
 		})
 		.catch(
        	function(err) {
-         console.log("Something went wrong!", err);
+         console.log("Error: ", err);
     	});
 	};
 	getOffers();
-	setInterval(getOffers, 5000);
+	setInterval(getOffers, 5000); //Changes offer in 5s periods
 	
-	fetch("getOffers.php?useJSON")
+	fetch("getOffers.php?useJSON") //Function retrives JSON offers and puts them into aside block
 	.then(
 		function(response){
 			return response.json();
